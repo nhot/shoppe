@@ -1,0 +1,217 @@
+/* tao bien css: color */
+:root {
+    --primary-color: #ed4e2e;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --navbar-height: 69px;
+    --header-height: 140px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --star-gold-color: #FFCE3E;
+    --header-sort-bar-height:  46px;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html {
+    /* de tinh rem vd 1.2rem = 12px */
+    font-size: 62,5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* responsive */
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 17.6667%;
+}
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 82.3334%;
+}
+/* dung khung */
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+@keyframes growtd {
+    from {
+        transform: scale(var(--growtd-form));
+    } 
+    to {
+        transform: scale(var(--growtd-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; 
+    display: flex;
+    animation:fadeIn linear 0.1s;
+}
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+.modal__body {
+    /* width: 300px;
+    height: 300px; */
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+     z-index: 1;
+     animation: growth linear 0.2s;
+}
+
+/* Button style */
+.btn {
+    line-height: 1.6rem;
+    min-width: 142px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 2px;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;   
+    justify-content: center;
+}
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0 ,0.1);
+} 
+.btn--size-s {
+    height: 32px;
+    font-size: 15px;
+    padding: 0 8px;
+}
+.btn.btn--primary { 
+    background-color: var(--primary-color);
+    color: var(--white-color); 
+    font-size: 1rem !important; 
+}
+
+.btn.btn--disable {
+    cursor: default;
+    color: #949494;
+    background-color: #ccc;
+}
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-input:hover .select-input__list {
+    display: block;
+}
+.select-input__lable {
+    font-size: 1.2rem;
+}
+
+.select-input__icon {
+    font-size: 14px;
+    color: #8d8383;
+    position: relative;
+    top: 2px;
+}
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding:8px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+.select-input__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    display: block;
+    padding: 4px 0;
+}
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+.pagination-item {
+
+    margin: 0 14px;
+}
+.pagination-item__link {
+    --height: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #939393; 
+    min-width: 40px;
+    min-height: var(--height);
+    line-height:var(--height);
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 300;
+}
+.pagination-item__icon {
+    
+}
+.pagination-item-active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.pagination-item {
+    margin: 0 8px;
+}
+.pagination-item-active .pagination-item__link:hover {
+    background-color: #ed5c3f;
+}
